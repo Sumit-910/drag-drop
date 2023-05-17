@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainBody{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.items{
+  border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  width: 8rem;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: rgb(240, 245, 249);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.itemCard{
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(200, 229, 252);
+  margin: 5px;
+  padding: 5px;
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.board{
+  height: 90vh;
+  width: 70vw;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ele{
+  position: relative;
+  z-index: 1;
+}
+
+.cross{
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  z-index: 2;
+  display: none;
+}
+
+.ele:hover .cross{
+  display: block;
 }
